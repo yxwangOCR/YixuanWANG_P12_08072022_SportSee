@@ -7,22 +7,23 @@ import Community from "./pages/Community";
 import Setting from "./pages/Setting";
 import Home from "./pages/Home";
 import Error from "./pages/Error";
+import {
+  QueryClient,
+  QueryClientProvider,
+} from 'react-query'
+
+const queryClient = new QueryClient()
 
 function App() {
   return (
-    <>
-      <BrowserRouter>
-        <NavBar />
-        <SideBar />
-        <Routes>
-          <Route index element={<Home />} />
-          <Route path='../pages/Profil' element={<Profil />} />
-          <Route path='../pages/Setting' element={<Setting />} />
-          <Route path='../pages/Community' element={<Community />} />
-          <Route path='*' element={<Error />} />
-        </Routes>
-      </BrowserRouter>
-    </>
+      <>
+        <QueryClientProvider client={queryClient}>
+          <BrowserRouter>
+            <NavBar />
+            <SideBar />
+          </BrowserRouter>
+        </QueryClientProvider>
+      </>
   );
 }
 
