@@ -2,14 +2,8 @@ import React from "react";
 import "./NavBar.css";
 import { Link } from "react-router-dom";
 import logo from "../../images/logo.png";
-import useUser from "../../hooks/useUser";
 
 function NavBar() {
-  const { data, isLoading } = useUser("18");
-  console.log(isLoading);
-  console.log(data);
-  console.log("=========");
-
   return (
     <nav className="navbar">
       <div className="navbar-container">

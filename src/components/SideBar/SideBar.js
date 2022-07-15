@@ -6,10 +6,10 @@ function SideBar() {
   return (
     <div className="vertical-nav">
       <div className="vertical-nav-div">
-        <NavIcon pic="yoga" />
-        <NavIcon pic="swim" />
-        <NavIcon pic="bike" />
-        <NavIcon pic="dumbbell" />
+        <NavIcon icon="yoga" />
+        <NavIcon icon="swim" />
+        <NavIcon icon="bike" />
+        <NavIcon icon="dumbbell" />
       </div>
       <p className="vertical-nav-text">Copyright, SportSee 2020</p>
     </div>

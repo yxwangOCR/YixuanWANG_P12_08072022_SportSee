@@ -11,19 +11,20 @@ import {
   Bar,
 } from "recharts";
 
-function ActivityChart() {
+function ActivityChart({ data }) {
+  console.log(data)
   return (
-    <article className='barChart'>
+    <div className='barChart'>
       <p className='barChart-title'>Activité quotidienne</p>
 
       <ResponsiveContainer>
-        <BarChart width={730} height={250}>
+        <BarChart width={730} height={250} data={data}>
           <CartesianGrid strokeDasharray='3 3' />
-          <XAxis />
-          <YAxis />
+          <XAxis dataKey="day" />
+          <YAxis  />
           <Tooltip />
-          <Bar dataKey='kg' fill='#282D30' />
-          <Bar dataKey='kCal' fill='#E60000' />
+          <Bar dataKey='kilogram' fill='#282D30' />
+          <Bar dataKey='calories' fill='#E60000' />
         </BarChart>
       </ResponsiveContainer>
 
@@ -38,7 +39,7 @@ function ActivityChart() {
           <p className='desc'>Calories brûlées (kCal)</p>
         </div>
       </div>
-    </article>
+    </div>
   );
 }
 

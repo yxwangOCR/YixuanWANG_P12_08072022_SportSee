@@ -3,18 +3,16 @@ import icons from "../../Icons/Icons.js";
 import PropTypes from "prop-types";
 import "./NavIcon.css";
 
-function NavIcon(props) {
+function NavIcon({ icon }) {
   return (
     <div className="nav-icon">
-      <img src={icons[props.icon]} alt="icon" />
+      <img src={icons[icon]} alt="icon" />
     </div>
   );
 }
 
 NavIcon.propTypes = {
-  icon: PropTypes.string,
+  icon: PropTypes.string.isRequired,
 };
-/** One common usage of the PropTypes.element validator is in ensuring that a component has a single child.
- * If the component has no children or multiple children, a warning is displayed on the JavaScript console.*/
 
 export default NavIcon;
