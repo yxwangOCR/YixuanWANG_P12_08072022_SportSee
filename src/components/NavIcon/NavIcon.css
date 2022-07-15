@@ -1,0 +1,10 @@
+.nav-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 6px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+}
