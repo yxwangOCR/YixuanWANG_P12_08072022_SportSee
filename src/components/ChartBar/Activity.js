@@ -1,6 +1,6 @@
 import React from "react";
-import "./ActivityChart.css";
 import PropTypes from "prop-types";
+import "./Activity.css";
 import {
   Tooltip,
   ResponsiveContainer,
@@ -11,8 +11,9 @@ import {
   Bar,
 } from "recharts";
 
-function ActivityChart({ data }) {
-  console.log(data)
+function Activity({ data }) {
+  console.log(data);
+ 
   return (
     <div className='barChart'>
       <p className='barChart-title'>Activité quotidienne</p>
@@ -20,8 +21,8 @@ function ActivityChart({ data }) {
       <ResponsiveContainer>
         <BarChart width={730} height={250} data={data}>
           <CartesianGrid strokeDasharray='3 3' />
-          <XAxis dataKey="day" />
-          <YAxis  />
+          <XAxis dataKey='day' />
+          <YAxis />
           <Tooltip />
           <Bar dataKey='kilogram' fill='#282D30' />
           <Bar dataKey='calories' fill='#E60000' />
@@ -43,6 +44,6 @@ function ActivityChart({ data }) {
   );
 }
 
-ActivityChart.propTypes = {};
+Activity.propTypes = {};
 
-export default ActivityChart;
+export default Activity;
