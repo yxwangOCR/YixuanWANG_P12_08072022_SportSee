@@ -14,5 +14,7 @@ const getUserActivity = async (userId) => {
 //the key"user" will be same for other charts?
 //userId vs idUser?
 export default function useUserActivity(idUser) {
-  return useQuery(["user"], () => getUserActivity(idUser));
+  return useQuery(["userActivity"], () => getUserActivity(idUser));
 }
+
+//When multiple components request the same query, only one request is issued
