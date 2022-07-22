@@ -12,9 +12,10 @@ function Dashboard() {
   const { data } = useUserActivity("18");
   //const { data } = useUserSession("12");
   //const { data }= useUserPerformance("12");
+  // const {data} = useUser("18")
   return (
     <div className='dashboard'>
-      <Profil />
+      <Profil data={data?.data?.userInfos} />
       {/** syntax means? */}
       <Activity data={data?.data?.sessions} />
       <Session data={data?.data?.sessions} />
