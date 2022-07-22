@@ -12,7 +12,9 @@ import {
   Line,
 } from "recharts";
 
-function Session(data) {
+function Session({ sessions }) {
+  console.log(sessions)
+
   return (
     <div className='lineChart'>
       <h2>Session here</h2>
@@ -20,7 +22,7 @@ function Session(data) {
         <LineChart
           width={730}
           height={250}
-          data={data}
+          data={sessions}
           margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
           <CartesianGrid strokeDasharray='3 3' />
           <XAxis dataKey='day' />

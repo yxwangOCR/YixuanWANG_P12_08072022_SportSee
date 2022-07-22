@@ -1,10 +1,11 @@
 import React from "react";
 
-function Profil(data) {
-  console.log(data);
+function Profil({ user }) {
+    console.log(user)
+
   return (
     <div>
-      <h1>Bonjour FirstName{/*data.userInfos.FirstName*/}</h1>
+      <h1>Bonjour FirstName {user?.firstName}</h1>
     </div>
   );
 }

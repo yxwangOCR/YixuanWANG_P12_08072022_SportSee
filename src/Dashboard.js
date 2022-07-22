@@ -7,18 +7,20 @@ import Profil from "./components/Profil/Profil";
 import useUserActivity from "./hooks/useUserActivity";
 import useUserSession from "./hooks/useUserSession";
 import useUserPerformance from "./hooks/useUserPerformance";
+import useUser from "./hooks/useUser";
 
 function Dashboard() {
-  const { data } = useUserActivity("18");
-  //const { data } = useUserSession("12");
+  const { data: dataActivity } = useUserActivity("18");
+  const { data: dataSession } = useUserSession("12");
   //const { data }= useUserPerformance("12");
-  // const {data} = useUser("18")
+  const { data: dataUser } = useUser("18")
+
   return (
     <div className='dashboard'>
-      <Profil data={data?.data?.userInfos} />
+      <Profil user={dataUser?.data?.userInfos} />
       {/** syntax means? */}
-      <Activity data={data?.data?.sessions} />
-      <Session data={data?.data?.sessions} />
+      <Activity data={dataActivity?.data?.sessions} />
+      <Session sessions={dataSession?.data?.sessions} />
       <Performance />
       <Score />
     </div>
