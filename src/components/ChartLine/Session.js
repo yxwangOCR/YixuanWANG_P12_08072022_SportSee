@@ -13,7 +13,7 @@ import {
 } from "recharts";
 
 function Session({ sessions }) {
-  //console.log(sessions);
+
   return (
     <div className='lineChart'>
      

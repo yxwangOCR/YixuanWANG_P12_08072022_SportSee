@@ -37,6 +37,7 @@ function Dashboard() {
           <Summary />
         </div>
       </div>
+
     </div>
   );
 }
