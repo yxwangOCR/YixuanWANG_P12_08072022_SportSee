@@ -8,6 +8,6 @@ const getUserSession = async (userId) => {
   return data;
 };
 
-export default function useUserSession(idUser) {
-  return useQuery(["userSession"], () => getUserSession(idUser));
+export default function useUserSession(userId) {
+  return useQuery(["userSession"], () => getUserSession(userId));
 }

@@ -1,0 +1,15 @@
+.dashboard-data-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: pink;
+  height: 100%;
+  width: 80%;
+}
+
+.dashboard-data-graph {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: lightgreen;
+}

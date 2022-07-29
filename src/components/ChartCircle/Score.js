@@ -2,40 +2,60 @@ import React from "react";
 import {
   Tooltip,
   ResponsiveContainer,
+  PolarAngleAxis,
   RadialBarChart,
   RadialBar,
   Legend,
 } from "recharts";
+import "./Score.css";
 
-function Score(data) {
+// tuto: https://github.com/recharts/recharts/issues/2662
+const CustomizedLegend = ({ payload }) => {
+  if (payload && payload.length) {
+    return (
+      <div className='custom-legend'>
+        <h2 className='legend'>{payload[0].value + "%"}</h2>
+        <span>de votre objectif</span>
+      </div>
+    );
+  }
+  return null;
+};
+
+function Score({ score }) {
+  const scorePercent = score?.score * 100;
+  const value = [{ value: scorePercent }];
   return (
     <div className='circleChart'>
-      <h2>Score here</h2>
       <ResponsiveContainer>
         <RadialBarChart
-          width={730}
-          height={250}
-          innerRadius='10%'
-          outerRadius='80%'
-          data={data}
-          startAngle={180}
+          width={258}
+          height={258}
+          innerRadius={800}
+          outerRadius={100}
+          barSize={8}
+          data={value}
+          startAngle={100}
           endAngle={0}>
           <RadialBar
-            minAngle={15}
-            label={{ fill: "#666", position: "insideStart" }}
             background
             clockWise={true}
-            dataKey='uv'
+            dataKey='value'
+            fill='#ff0000'
+            cornerRadius={10}
           />
           <Legend
             iconSize={10}
-            width={120}
-            height={140}
+            width={20}
+            height={20}
             layout='vertical'
-            verticalAlign='middle'
-            align='right'
+            verticalAlign='top'
+            align='center'
+            payload={value}
+            content={<CustomizedLegend />}
           />
-          <Tooltip />
+
+         
         </RadialBarChart>
       </ResponsiveContainer>
     </div>
