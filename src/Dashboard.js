@@ -34,7 +34,7 @@ function Dashboard() {
           </div>
         </div>
         <div>
-          <Summary />
+          <Summary keyData={dataUser?.data?.keyData} />
         </div>
       </div>
 

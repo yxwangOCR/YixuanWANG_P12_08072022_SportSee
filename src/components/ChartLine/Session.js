@@ -1,6 +1,5 @@
 import React from "react";
 import "./Session.css";
-import PropTypes from "prop-types";
 import {
   ResponsiveContainer,
   XAxis,
@@ -13,10 +12,8 @@ import {
 } from "recharts";
 
 function Session({ sessions }) {
-
   return (
     <div className='lineChart'>
-     
       <ResponsiveContainer>
         <LineChart
           width={730}
@@ -34,6 +31,5 @@ function Session({ sessions }) {
     </div>
   );
 }
-Session.propTypes = {};
 
 export default Session;

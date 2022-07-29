@@ -1,1 +1,30 @@
+.summary-icon-container {
+  width: 258px;
 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 10px;
+}
+
+.tag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background: #fbfbfb;
+  padding: 1rem;
+  border-radius: 10px;
+  width: 10rem;
+}
+
+.tag-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.small {
+  font-size: 0.7rem;
+}

@@ -1,8 +1,6 @@
 import React from "react";
 import {
-  Tooltip,
   ResponsiveContainer,
-  PolarAngleAxis,
   RadialBarChart,
   RadialBar,
   Legend,
@@ -54,8 +52,6 @@ function Score({ score }) {
             payload={value}
             content={<CustomizedLegend />}
           />
-
-         
         </RadialBarChart>
       </ResponsiveContainer>
     </div>
