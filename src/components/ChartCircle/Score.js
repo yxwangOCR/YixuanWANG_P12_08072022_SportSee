@@ -24,7 +24,7 @@ function Score({ score }) {
   const scorePercent = score?.score * 100;
   const value = [{ value: scorePercent }];
   return (
-    <div className='circleChart'>
+    <div className='circleChart  chart-box'>
       <ResponsiveContainer>
         <RadialBarChart
           width={258}

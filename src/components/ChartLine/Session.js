@@ -11,22 +11,36 @@ import {
   Line,
 } from "recharts";
 
+const CustomizedLegend = ({ payload }) => {
+    return (
+        <div className='custom-legend'>
+          <span>Durée moyenne des sessions</span>
+        </div>
+    )
+}
+
 function Session({ sessions }) {
   return (
-    <div className='lineChart'>
+    <div className='lineChart  chart-box'>
       <ResponsiveContainer>
         <LineChart
           width={730}
           height={250}
           data={sessions}
           margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-          <CartesianGrid strokeDasharray='3 3' />
-          <XAxis dataKey='day' />
-          <YAxis />
           <Tooltip />
-          <Legend />
-          <Line type='monotone' dataKey='sessionLength' stroke='#8884d8' />
+          <Legend
+              iconSize={10}
+              width={20}
+              height={20}
+              layout='vertical'
+              verticalAlign='top'
+              align='center'
+              content={<CustomizedLegend />}
+          />
+          <Line type='monotone' dataKey='sessionLength' stroke="white" />
         </LineChart>
+
       </ResponsiveContainer>
     </div>
   );

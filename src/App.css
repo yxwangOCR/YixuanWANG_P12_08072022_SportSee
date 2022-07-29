@@ -24,6 +24,11 @@ html {
   display: flex;
 }
 
+.chart-box {
+  height: 15rem;
+  width: calc(33% - 8px);
+}
+
 .vertical-nav {
   width: 117px;
   background-color: #020203;
@@ -56,22 +61,16 @@ html {
 
 .barChart {
   width: 100%;
-  height: 200px;
 }
 
 .circleChart {
-  width: 15rem;
-  height: 15rem;
   background-color: #fbfbfb;
 }
 
 .lineChart {
-  width: 15rem;
-  height: 15rem;
+  background: #FF0000;
 }
 
 .radarChart {
-  width: 15rem;
-  height: 15rem;
   background: #282d30;
 }

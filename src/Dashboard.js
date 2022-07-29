@@ -11,11 +11,13 @@ import useUserPerformance from "./hooks/useUserPerformance";
 import useUser from "./hooks/useUser";
 import "./Dashboard.css";
 
+const ID_USER = '18'
+
 function Dashboard() {
-  const { data: dataUser } = useUser("18");
-  const { data: dataActivity } = useUserActivity("18");
-  const { data: dataSession } = useUserSession("12");
-  const { data: dataPerformance } = useUserPerformance("12");
+  const { data: dataUser } = useUser(ID_USER);
+  const { data: dataActivity } = useUserActivity(ID_USER);
+  const { data: dataSession } = useUserSession(ID_USER);
+  const { data: dataPerformance } = useUserPerformance(ID_USER);
 
   return (
     <div className='dashboard'>
@@ -26,10 +28,7 @@ function Dashboard() {
           <Activity activity={dataActivity?.data?.sessions} />
           <div className='dashboard-data-graph'>
             <Session sessions={dataSession?.data?.sessions} />
-            <Performance
-              performanceKind={dataPerformance?.data?.kind}
-              performanceData={dataPerformance?.data?.data}
-            />
+            <Performance performance={dataPerformance?.data} />
             <Score score={dataUser?.data} />
           </div>
         </div>
