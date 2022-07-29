@@ -1,17 +1,11 @@
-.vertical-nav {
-  width: 117px;
-  height: 100%;
-  background-color: #020203;
+.vertical-nav-icon {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
 }
 
 .vertical-nav-text {
   color: #fff;
-  margin-top: auto;
-  margin-bottom: 170px;
   transform: rotate(180deg);
   writing-mode: vertical-rl;
   font-size: 1.2rem;

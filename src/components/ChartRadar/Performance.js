@@ -8,20 +8,23 @@ import {
   Radar,
   Legend,
 } from "recharts";
+import "./Performance.css";
 
-function Performance(data) {
+function Performance({ performanceKind, performanceData }) {
+  //console.log(performanceData);
+  //console.log(performanceKind);
   return (
     <div className='radarChart'>
-      <h2>Performance</h2>
       <ResponsiveContainer>
-        <RadarChart outerRadius={90} width={730} height={250} data={data}>
+        <RadarChart outerRadius={90} data={(performanceData, performanceKind)}>
           <PolarGrid />
-          <PolarAngleAxis dataKey='performance' />
+          <PolarAngleAxis dataKey='kind' data={performanceKind} />
           <PolarRadiusAxis angle={30} domain={[0, 150]} />
           <Radar
-            dataKey='A'
-            stroke='#8884d8'
-            fill='#8884d8'
+            dataKey='value'
+            data={performanceData}
+            stroke='#FF0101'
+            fill='#FF0101'
             fillOpacity={0.6}
           />
           <Legend />

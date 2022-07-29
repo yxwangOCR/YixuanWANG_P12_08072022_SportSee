@@ -5,7 +5,7 @@ import NavIcon from "../NavIcon/NavIcon";
 function SideBar() {
   return (
     <div className="vertical-nav">
-      <div className="vertical-nav-div">
+      <div className="vertical-nav-icon">
         <NavIcon icon="yoga" />
         <NavIcon icon="swim" />
         <NavIcon icon="bike" />

@@ -8,8 +8,8 @@ const getUserPerformance = async (userId) => {
   return data;
 };
 
-export default function useUserPerformance(idUser) {
-  return useQuery(["userPerformance"], () => getUserPerformance(idUser));
+export default function useUserPerformance(userId) {
+  return useQuery(["userPerformance"], () => getUserPerformance(userId));
 }
 
 // for score, how to get data by useQuery hook?

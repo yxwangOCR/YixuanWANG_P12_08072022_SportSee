@@ -13,11 +13,10 @@ import {
 } from "recharts";
 
 function Session({ sessions }) {
-  console.log(sessions)
 
   return (
     <div className='lineChart'>
-      <h2>Session here</h2>
+     
       <ResponsiveContainer>
         <LineChart
           width={730}
