@@ -6,13 +6,14 @@ import {
   Legend,
 } from "recharts";
 import "./Score.css";
+import PropTypes from "prop-types";
 
 // tuto: https://github.com/recharts/recharts/issues/2662
 const CustomizedLegend = ({ payload }) => {
   if (payload && payload.length) {
     return (
-      <div className='custom-legend'>
-        <h2 className='legend'>{payload[0].value + "%"}</h2>
+      <div className="custom-legend">
+        <h2 className="legend">{payload[0].value + "%"}</h2>
         <span>de votre objectif</span>
       </div>
     );
@@ -24,7 +25,7 @@ function Score({ score }) {
   const scorePercent = score?.score * 100;
   const value = [{ value: scorePercent }];
   return (
-    <div className='circleChart  chart-box'>
+    <div className="circleChart  chart-box">
       <ResponsiveContainer>
         <RadialBarChart
           width={258}
@@ -34,21 +35,22 @@ function Score({ score }) {
           barSize={8}
           data={value}
           startAngle={100}
-          endAngle={0}>
+          endAngle={0}
+        >
           <RadialBar
             background
             clockWise={true}
-            dataKey='value'
-            fill='#ff0000'
+            dataKey="value"
+            fill="#ff0000"
             cornerRadius={10}
           />
           <Legend
             iconSize={10}
             width={20}
             height={20}
-            layout='vertical'
-            verticalAlign='top'
-            align='center'
+            layout="vertical"
+            verticalAlign="top"
+            align="center"
             payload={value}
             content={<CustomizedLegend />}
           />
@@ -59,3 +61,6 @@ function Score({ score }) {
 }
 
 export default Score;
+Score.propTypes = {
+  score: PropTypes.object,
+};

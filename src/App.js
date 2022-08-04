@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, useParams } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import NavBar from "./components/NavBar/NavBar";
 import SideBar from "./components/SideBar/SideBar";
 import Dashboard from "./Dashboard";
@@ -11,15 +11,14 @@ import "./App.css";
 const queryClient = new QueryClient(); // instanitiate the query client and provide it in component tree
 
 function App() {
-
   return (
     //every child component can fetch data:
     // then define a function in hooks to fetch data from server
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
-        <div className='app'>
+        <div className="app">
           <NavBar />
-          <div className='app--content'>
+          <div className="app--content">
             <SideBar />
             <Dashboard />
           </div>
