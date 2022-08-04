@@ -3,19 +3,31 @@ import "./Session.css";
 import {
   ResponsiveContainer,
   LineChart,
+  XAxis,
   Tooltip,
   Legend,
   Line,
+  Dot,
 } from "recharts";
 import PropTypes from "prop-types";
 
-const CustomizedLegend = ({ payload }) => {
+const CustomizedLegend = () => {
   return (
     <div className="custom-legend-session">
       <span>Durée moyenne des sessions</span>
     </div>
   );
 };
+
+// Dot source: https://recharts.org/en-US/api/Dot 
+const CustomizedKey = ({ cx, cy }) => {
+  return (
+      <g>
+      <Dot r={10} fill='white'cy={cy} cx={cx} opacity='0.5'/>
+      <Dot r={4} fill='white'cy={cy} cx={cx}/>
+      </g>
+  )
+  }
 
 function Session({ sessions }) {
   return (
@@ -28,6 +40,7 @@ function Session({ sessions }) {
           margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
         >
           <Tooltip />
+          <XAxis dataKey="day" tickLine={false} axisLine={false} stroke="#FFFFFF"/>
           <Legend
             iconSize={10}
             width={20}
@@ -37,7 +50,7 @@ function Session({ sessions }) {
             align="center"
             content={<CustomizedLegend />}
           />
-          <Line type="monotone" dataKey="sessionLength" stroke="white" />
+          <Line type="monotone" dataKey="sessionLength" stroke="#FFFFFF" activeDot={<CustomizedKey/>}/>
         </LineChart>
       </ResponsiveContainer>
     </div>

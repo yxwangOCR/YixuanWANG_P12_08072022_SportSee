@@ -8,13 +8,17 @@ import {
 import "./Score.css";
 import PropTypes from "prop-types";
 
-// tuto: https://github.com/recharts/recharts/issues/2662
+/**
+ * CustomizedLegend function is to get the customized legend in the middle of chart.
+ * @param {*} payload is the source data of the content to be displayed in the legend, usually calculated internally.
+ */
 const CustomizedLegend = ({ payload }) => {
   if (payload && payload.length) {
     return (
       <div className="custom-legend">
         <h2 className="legend">{payload[0].value + "%"}</h2>
-        <span>de votre objectif</span>
+        <span>de votre</span>
+        <span>objectif</span>
       </div>
     );
   }
@@ -25,11 +29,10 @@ function Score({ score }) {
   const scorePercent = score?.score * 100;
   const value = [{ value: scorePercent }];
   return (
-    <div className="circleChart  chart-box">
+    <div className="circleChart chart-box">
+      <label className="score-title">Score</label>
       <ResponsiveContainer>
         <RadialBarChart
-          width={258}
-          height={258}
           innerRadius={800}
           outerRadius={100}
           barSize={8}
@@ -38,16 +41,13 @@ function Score({ score }) {
           endAngle={0}
         >
           <RadialBar
-            background
-            clockWise={true}
+            position="center"
             dataKey="value"
             fill="#ff0000"
             cornerRadius={10}
           />
           <Legend
             iconSize={10}
-            width={20}
-            height={20}
             layout="vertical"
             verticalAlign="top"
             align="center"
