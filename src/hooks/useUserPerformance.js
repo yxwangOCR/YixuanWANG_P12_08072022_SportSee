@@ -23,4 +23,4 @@ export default function useUserPerformance(userId) {
   });
 }
 
-// for score, how to get data by useQuery hook?
+

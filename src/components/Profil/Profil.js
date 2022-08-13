@@ -1,4 +1,5 @@
 import React from "react";
+import "./Profil.css"
 
 function Profil({ user }) {
   return (

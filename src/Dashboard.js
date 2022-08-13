@@ -13,7 +13,14 @@ import "./Dashboard.css";
 
 const ID_USER = "18";
 
+/** 
+ * We have to rename the key data，because :
+  we need the value of key "data" every time
+  but we cannot create many constants with the same name: 
+  So as below, we get the key "data", then rename it with ": dataXX "
+*/
 function Dashboard() {
+  
   const { data: dataUser } = useUser(ID_USER);
   const { data: dataActivity } = useUserActivity(ID_USER);
   const { data: dataSession } = useUserSession(ID_USER);
@@ -22,12 +29,11 @@ function Dashboard() {
   return (
     <div className="dashboard">
       <Profil user={dataUser?.data?.userInfos} className="dashboard-profil" />
-
       <div className="dashboard-graph-container">
         <div className="dashboard-data-container">
           <Activity activity={dataActivity?.data?.sessions} />
           <div className="dashboard-data-graph">
-            <Session sessions={dataSession?.data?.sessions} />
+            <Session sessions={dataSession?.data} />
             <Performance performance={dataPerformance?.data} />
             <Score score={dataUser?.data} />
           </div>

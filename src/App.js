@@ -6,7 +6,9 @@ import Dashboard from "./Dashboard";
 import { QueryClient, QueryClientProvider } from "react-query";
 import "./App.css";
 
-//React query : library simplifies fetch + synchronize data from server.
+/**
+ * React query : library simplifies fetch + synchronize data from server.
+ */
 
 const queryClient = new QueryClient(); // instanitiate the query client and provide it in component tree
 
