@@ -8,6 +8,7 @@ import {
   XAxis,
   YAxis,
   Bar,
+  barSize,
 } from "recharts";
 import PropTypes from "prop-types";
 
@@ -98,6 +99,7 @@ function Activity({ activity }) {
               fill="#282D30"
               radius={[10, 10, 0, 0]}
               unit="kg"
+              barSize={10}
             />
             <Bar
               dataKey="calories"
@@ -105,6 +107,7 @@ function Activity({ activity }) {
               radius={[10, 10, 0, 0]}
               unit="kCal"
               yAxisId="cl"
+              barSize={10}
             />
           </BarChart>
         </ResponsiveContainer>
