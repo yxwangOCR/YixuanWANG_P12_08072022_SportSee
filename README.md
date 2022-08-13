@@ -17,7 +17,7 @@ This project build a user dashboard by fetching client data from API provided by
 - Use Git to clone the repository
 - Use Node to run 'npm' commands
 
-### To install and run this project
+## To install and run this project
 - Clone the project by using : https://github.com/yxwangOCR/YixuanWANG_P12_08072022_SportSee.git 
 - Install the packages by using 'npm install'
 - Runs the app in the development mode by using 'npm start'.\
@@ -27,6 +27,6 @@ This project build a user dashboard by fetching client data from API provided by
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### Query examples : 
+## Query examples : 
 - Get performance data of user with ID 12:  http://localhost:3000/user/12/performance 
 - Get activity data of user with ID 18 : http://localhost:3000/user/18/activity
