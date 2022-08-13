@@ -16,6 +16,7 @@ const CustomizedLegend = ({ payload }) => {
   if (payload && payload.length) {
     return (
       <div className="custom-legend">
+        <div className="score-title">Score</div>
         <h2 className="legend">{payload[0].value + "%"}</h2>
         <span>de votre</span>
         <span>objectif</span>
@@ -30,8 +31,9 @@ function Score({ score }) {
   const value = [{ value: scorePercent }];
   return (
     <div className="circleChart chart-box">
-      <label className="score-title">Score</label>
+      
       <ResponsiveContainer>
+        
         <RadialBarChart
           innerRadius={800}
           outerRadius={100}

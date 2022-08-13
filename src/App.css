@@ -63,6 +63,9 @@ html {
 
 .circleChart {
   background-color: #fbfbfb;
+  display: flex;
+  flex-flow: column;
+   
 }
 
 .lineChart {
